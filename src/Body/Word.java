@@ -3,10 +3,35 @@ package Body;
 import Tools.DBUtil;
 import com.sun.xml.internal.ws.api.server.SDDocument;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.*;
 import java.util.*;
+import java.util.Date;
 
 public class Word {
+    private static void writeLog(String str) {
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream("Log.txt", true);
+            fos.write(str.getBytes());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fos != null) {
+                    fos.flush();
+                    fos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     private static void printMap(Map<String, String> map, Scanner s) {
         for (String english : map.keySet()) {
             String chinese = map.get(english);
@@ -201,8 +226,12 @@ public class Word {
                     }
                 }
             }
+
             System.out.println("复习结束，以下是生词学习：");
             reviewNewWords(unknownWords, s);
+            Date reviewDate = new Date();
+            String log = new String(reviewDate + ": 复习了" + n + "单词\n");
+            writeLog(log);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
