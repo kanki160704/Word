@@ -121,6 +121,9 @@ public class Word {
         if (tableName.equals("newword")) {
             sql = "insert into  newword (word, chinese, firstLetter, lastReview) values (? , ?, ?, CURRENT_TIMESTAMP)";
         }
+        else if (tableName.equals("yesterday")) {
+            sql = "insert into  yesterday (word, chinese, firstLetter, lastReview) values (? , ?, ?, CURRENT_TIMESTAMP)";
+        }
         else {
             sql = "insert into  oldword (word, chinese, firstLetter) values (?, ?, ?)";
         }
@@ -186,6 +189,30 @@ public class Word {
         }
     }
 
+    private static void reviewYesterday(ResultSet rs, PreparedStatement ps, Connection conn, Scanner s) {
+        /*
+        复习前一天不会的生词
+         */
+        System.out.println("复习前一天的生词");
+        String sql = "delete from yesterday where TIMESTAMPDiff(hour, lastReview, CURRENT_TIMESTAMP) > 24";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.executeUpdate();
+            String reviewSql = "select * from yesterday";
+            ps = conn.prepareStatement(reviewSql);
+            rs = ps.executeQuery();
+            Map<String, String> map = new HashMap<>();
+            while (rs.next()) {
+                String english = rs.getString("word");
+                String chinese = rs.getString("chinese");
+                map.put(english, chinese);
+            }
+            reviewNewWords(map, s);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
     private static void review(ResultSet rs, PreparedStatement ps, Connection conn, Scanner s, String tableName, int n) {
         /*
         *   随机抽取n个单词复习，并将不会的存放在unknown words中，n个单词复习完再复习不会的单词，直到unknown words为空
@@ -214,6 +241,7 @@ public class Word {
                             if (result.equals("y") || result.equals("n")) {
                                 if (result.equals("n")) {
                                     unknownWords.put(english, chinese);
+                                    insertWord(ps, conn, english, chinese, english.substring(0, 1), "yesterday");
                                 }
                                 break;
                             }
@@ -223,6 +251,7 @@ public class Word {
                     }
                     else {
                         System.out.println("无效输入");
+                        count --;
                     }
                 }
             }
@@ -297,7 +326,7 @@ public class Word {
         }
 
         while (true) {
-            System.out.print("输入想要进行的操作，添加单词输入i，删除单词输入d，复习单词输入r，退出输入e：");
+            System.out.print("输入想要进行的操作，添加单词输入i，删除单词输入d，复习单词输入r，复习前一天生词输入y，退出输入e：");
             String str = s.nextLine();
             if (str.equals("e")) {
                 break;
@@ -337,7 +366,9 @@ public class Word {
                     System.out.print("查无此表");
                 }
             }
-
+            else if (str.equals("y")) {
+                reviewYesterday(rs, ps, conn, s);
+            }
             else {
                 System.out.println("无效操作");
             }
