@@ -83,11 +83,17 @@ public class Word {
         }
     }
 
-    private static int getFamiliar(String english, PreparedStatement ps, Connection conn) {
+    private static int getFamiliar(String english, String tableName, PreparedStatement ps, Connection conn) {
         /*
         *   从newword表格中获得familiar值
          */
-        String sql = "select familiar from newword where word = ?";
+        String sql = null;
+        if (tableName.equals("newword")) {
+            sql = "select familiar from newword where word = ?";
+        }
+        else {
+            sql = "select familiar from urgent where word = ?";
+        }
         int familiar = 0;
         try {
             ps = conn.prepareStatement(sql);
@@ -101,11 +107,17 @@ public class Word {
         return familiar;
     }
 
-    private static void setFamiliar(int familiar, PreparedStatement ps, Connection conn, String english) {
+    private static void setFamiliar(int familiar, String tableName, PreparedStatement ps, Connection conn, String english) {
         /*
         设置单词english的熟悉度
          */
-        String sql = "update newword set familiar = ? where TIMESTAMPDiff(hour, lastReview, CURRENT_TIMESTAMP) > 2 AND word = ?";
+        String sql = null;
+        if (tableName.equals("newword")) {
+            sql = "update newword set familiar = ? where TIMESTAMPDiff(hour, lastReview, CURRENT_TIMESTAMP) > 2 AND word = ?";
+        }
+        else {
+            sql = "update urgent set familiar = ? where TIMESTAMPDiff(hour, lastReview, CURRENT_TIMESTAMP) > 2 AND word = ?";
+        }
         try {
             ps = conn.prepareStatement(sql);
             ps.setInt(1, Math.max(0, familiar));
@@ -117,12 +129,18 @@ public class Word {
     }
 
     private static void insertWord(PreparedStatement ps, Connection conn, String english, String chinese, String first, String tableName) {
+        /*
+        将单词插入一张表格中，需要给出单词的中文、英文、首字母
+         */
         String sql = "";
         if (tableName.equals("newword")) {
-            sql = "insert into  newword (word, chinese, firstLetter, lastReview) values (? , ?, ?, CURRENT_TIMESTAMP)";
+            sql = "insert into  newword (word, chinese, firstLetter, lastReview) values (?, ?, ?, CURRENT_TIMESTAMP)";
         }
         else if (tableName.equals("yesterday")) {
-            sql = "insert into  yesterday (word, chinese, firstLetter, lastReview) values (? , ?, ?, CURRENT_TIMESTAMP)";
+            sql = "insert into  yesterday (word, chinese, firstLetter, lastReview) values (?, ?, ?, CURRENT_TIMESTAMP)";
+        }
+        else if (tableName.equals("urgent")) {
+            sql = "insert into  urgent (word, chinese, firstLetter, lastReview) values (?, ?, ?, CURRENT_TIMESTAMP)";
         }
         else {
             sql = "insert into  oldword (word, chinese, firstLetter) values (?, ?, ?)";
@@ -139,6 +157,9 @@ public class Word {
     }
 
     public static void insert(PreparedStatement ps, Connection conn, Scanner s, String tableName) {
+        /*
+        获得输入的单词的中英文
+         */
         while (true) {
             System.out.print("请输入想要添加的英文，输入e返回：");
             String english = s.nextLine();
@@ -268,6 +289,7 @@ public class Word {
 
     private static void update(Connection conn, PreparedStatement ps, String isKnown, String tableName, String english) {
         /*
+        * newword表和urgent表是一样的
         * 如果单词在已学习的表格中，并且认识的话，不做任何修改。
         * 如果单词在已学习的表格中，并且不认识，那么将该单词放到生词表中，设置熟悉值为0.
         * 如果单词在生词表中，并且认识，那么熟悉值+1. 如果两次复习时间小于2小时，则不增加。如果熟悉值更新后到了20，就从生词表中删除，并且放入已学习。
@@ -282,12 +304,12 @@ public class Word {
                 exchange(english, "oldword", "newword", ps, conn);
             }
         }
-        else if (tableName.equals("newword")) {
+        else if (tableName.equals("newword") || tableName.equals("urgent")) {
             /*
             * 在生词表中先获取熟悉值
             *
              */
-            int familiar = getFamiliar(english, ps, conn);
+            int familiar = getFamiliar(english, tableName, ps, conn);
 
             if (isKnown.equals("n")) {
                 familiar = familiar - 5;
@@ -299,7 +321,7 @@ public class Word {
                 exchange(english, "newword", "oldword", ps, conn);
                 return;
             }
-            setFamiliar(familiar, ps, conn, english);
+            setFamiliar(familiar, tableName, ps, conn, english);
         }
     }
 
@@ -332,7 +354,11 @@ public class Word {
                 break;
             }
             else if (str.equals("i")) {
-                insert(ps, conn, s, "newword");
+                System.out.print("想要在那一张表格中新增，newword或者urgent: ");
+                String temp = s.nextLine();
+                if (temp.equals("newword") || temp.equals("urgent")) {
+                    insert(ps, conn, s, temp);
+                }
             }
             else if (str.equals("d")) {
                 System.out.print("想要删除的单词在old还是new中？old表输入o，new表输入n：");
@@ -352,7 +378,7 @@ public class Word {
             else if (str.equals("r")) {
                 System.out.print("请输入复习的单词数：");
                 int n = Integer.parseInt(s.nextLine());
-                System.out.print("需要在哪一张表中复习？old表输入o，new表输入n：");
+                System.out.print("需要在哪一张表中复习？old表输入o，new表输入n，urgent输入u：");
                 String tableName = s.nextLine();
                 if (tableName.equals("o")) {
                     tableName = "oldword";
@@ -360,6 +386,10 @@ public class Word {
                 }
                 else if (tableName.equals("n")) {
                     tableName = "newword";
+                    review(rs, ps, conn, s, tableName, n);
+                }
+                else if (tableName.equals("u")) {
+                    tableName = "urgent";
                     review(rs, ps, conn, s, tableName, n);
                 }
                 else {
