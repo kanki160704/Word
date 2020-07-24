@@ -160,10 +160,13 @@ public class Word {
         /*
         获得输入的单词的中英文
          */
+        int i = 0;
         while (true) {
+            i ++;
             System.out.print("请输入想要添加的英文，输入e返回：");
             String english = s.nextLine();
             if (english.equals("e")) {
+                writeLog("添加了" + i + "生词");
                 return;
             }
             String first = english.substring(0, 1);
@@ -223,12 +226,15 @@ public class Word {
             ps = conn.prepareStatement(reviewSql);
             rs = ps.executeQuery();
             Map<String, String> map = new HashMap<>();
+            int i = 0;
             while (rs.next()) {
+                i ++;
                 String english = rs.getString("word");
                 String chinese = rs.getString("chinese");
                 map.put(english, chinese);
             }
             reviewNewWords(map, s);
+            writeLog("复习了" + i + "单词");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
