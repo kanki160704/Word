@@ -1,0 +1,9 @@
+1. 答案：C
+解析：文章首段首先介绍一个理论难题：关于invasibility原因没有统一意见。However后，作者指出，一种基于资源波动的理论能解决该理论难题。二段详细介绍该理论。该理论主要用resource-release mechanisms来解释invasibility，否定物种丰富性的解释。
+这道题是典型的主旨题。选项A说是评价一个理论的实验观察上的成功。但原文中并没有讲到实验观察的地方，而是理论上的推测；选项B说解释了为什么某一现象没有一致的理论原因，但文章主要讲了新理论如何解决旧理论的不一致性，而不是“为什么”的问题；选项C说支持了一种有潜力可以解决原有理论僵局的新理论，符合题意；选项D说由一个理论推测出了可以被检测的推论，但文中并没有提到推论，也没有提到检测问题；选项E说描述了解释某些特定实验结果的困难。原文中只由第一段说某些原有假说与实验结果不一致，并非全文都在描述困难。
+
+2. 答案：B
+解析：根据fieldstudies 定位到文章首段，however转折后，previous studies仍指field studies。选项B是对转折后的概括。
+
+3. 答案：E
+解析：根据高亮关键词定位首段。尽管关键词出现在首段，因二段是对首段理论的详细展开，答案很可能出现在二段。E选项定位该句Since原因从句：Inparticular, the theory predicts that there will be no necessary relationship between the species diversity of a plant community and its susceptibility to invasion, since near-complete exploitation can each occur in both species-richand species-poor communities。该句用来否定物种多样性的解释，因为不同的（物种丰富）情况会有一样的结果：（外来物种）的几乎彻底开发利用。

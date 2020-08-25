@@ -1,0 +1,13 @@
+1. 答案：C
+解析：首段切入主题：新研究质疑旧观点。旧观点是：冰川间期是一贯地温暖的。
+二段展开新研究情况：GRIP, GISP2, 两个通过研究格陵兰深层冰川了解当时气候的项目。三段详细介绍GRIP研究的机制。气候温暖，积雪中O-18多于O-16。气候寒冷，风更强，更多dust and calcium ions. 四段，尽管两个项目有矛盾之处，GRIP被认为更可靠。
+    该题问文章主旨。从文章结构分析可确定选C
+
+2. 答案：E
+解析：通过三段对GRIP项目的机制描述，可知其主要特征为：通过对现在能发现的古代冰层中的物质构成分析推知当时的气候状况。E选项最相似：通过现在能发现的证据推知早期情况，所以选E。
+
+3. 答案：D
+解析：注意关键点“prior to the GRIPfindings”可以定位到原文的第一段“Based on evidence from tree rings, pollen samples and other records,scientists have for a long time assumed that interglacials—warm interludes between ice ages—were as mild and uniform as the Holocene, the present interglacial, has been for all of its 8,000 to 10,000 years. ”和第三段“Findings from the upper sections of the cores have confirmed what scientists already knew climate during the last ice age fluctuated rapidly.”从而选D。
+
+4. 答案：C
+解析：根据关键词oxygen-16 andoxygen-18定位到原文“When the air was warm, vapor containing the heavier isotope, oxygen-18,condensed and formed precipitation, in the form of snow, more readily than didvapor containing oxygen-16. Thus, snow that fell during warmer periods contains proportionally more oxygen-18 than snow deposited during cold spells. ”可知oxygen-16 andoxygen-18含量会随冷暖波动，热，O-18多，冷，O-16多。又知：Data from GRIPseem to indicate that the Eemian climate swung at least as wildly as theclimate of ice age periods. 气候冷热有波动。选C。

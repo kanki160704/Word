@@ -1,0 +1,9 @@
+1. 答案：C
+解析：这篇文章明显是在描述一个科学实验和实验结果，C选项最合适。【争议解释：这个题之前有选B选项，BC两个选项确实有一定争议，但是后来ETS把这个题的B选项换成了其他选项后收录到了PPO第三套题里面（ETS后来把B选项改成了"It proposes an alternative to a hypothesis mentioned earlier in the passage." ）这个选项肯定是错的，所以就只能选C选项。大家以后在考试中碰到这个题也不会再看到老版本的B选项了，所以直接选C选项即可】
+
+
+2. 答案：D
+解析：该题只能选项定位。D选项可以定位到文章首句，是其同义改写：Although social learning (the acquisition of specific behaviors by observing other individuals exhibiting those behaviors ) is well documented among fish, few studies have investigated social learning within a develop mental context in these taxa.
+
+3. 答案：B
+解析：根据人名，回原文定位到第二句，其中later foraging success表明，这项研究需要研究这种鱼生命中的多个时间点，对应B选项。A逻辑错误，这个实验就是研究social learning的;C种族密度会影响这种鱼的social learning，与原文矛盾;D找不到对应;E与原文矛盾，大种群中反而会减少social learning

@@ -1,0 +1,16 @@
+1. 答案：C
+解析：通读全文可知，文章以分类方式介绍探究印刷术产生之前罗马文献流传历史的方法。
+首段首句引入主题，指出指出探究罗马文本流传情况的两种证据：内部证据和外部证据。接着介绍内部证据。作者对该类证据持偏负面态度，认为其may paint a distorted picture.
+二段介绍一种外部证据：中世纪的一个文本。作者认为该类证据也不能准确表明当时的真实情况。
+三段介绍另一种外部证据：引用。作者对其也是偏负面态度：引用的未必是一手资料。
+四段总结，警告过度概括的倾向。
+
+该题问文章主旨。A选项侧重于changes，然而文章中并没有相应内容。D说提倡某一种证据，但文中没有体现作者的偏好；E选项是细节。BC选项中，B选项说“对比”了研究古罗马文献的证据，文章有分类，但对几种分类证据都是负面评价，“对比”不准确；C选项说列举了研究古罗马文献流传过程中的困难，正确；所以选C。
+
+2. 答案：D
+解析：根据关键词stemma定位至原文“Internal evidence is used to reconstruct the relationship of the surviving manuscripts of a Roman text to one another, as representedin a modern stemma codicum: a diagram depicting the genealogical relationship of surviving manuscripts and those the stemmas editor believes existed at onetime.”可知stemma是用来构建“代际关系”的，所以选D。
+
+3.答案：AB
+解析：细节理解题，主要依靠原文对应，按照文章内容进行选择。定位到原文“It is equally possible that the work survived far into the MiddleAges in numerous copies in monastic libraries but were unnoticed due to lack ofinterest.”可知选A、B.定位到“Quotations from a Roman text by a medieval author are another category of external evidence: but does the appearance of a rare word or grammatical construction—or even a short passage—really indicate a medieval author’s firsthand knowledge of this or that ancient work, or does such usage instead derive from some intermediate source, such as a grammar book or a popular style manual? ”可知不选C。
+
+4. 解析：由“underestimate”定位到“Conversely, the stemma can also bestow a semblance of separation on manuscripts written within a few months of one another or even in the same room.”

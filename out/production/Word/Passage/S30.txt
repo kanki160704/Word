@@ -1,0 +1,6 @@
+1. 答案：B
+解析：文章首段首先介绍研究者认为火星从来没有湿热期的观点及理由：火星大部分表面是由未风化材料组成的。黑体句是研究者用来支持自己观点的假设推理。文章二段是作者的质疑：科学家看得不仔细，新证据表明火星表面是有风化材料的。
+       该题问科学家们通过什么发现了火星表面的weathered material。回到原文“New high-resolution mapping data and close-up surface studies haverevealed clays and other hydrated minerals in many regions”可知选B。A选项不如B准确，文章二段提到 craters, 但数据研究针对 manyregions, 不仅仅volcanic craters。
+
+2. 答案：B
+解析：高亮的句子是“If water flowed foran extended period, researchers reasoned, it should have altered and weathered the volcanic minerals, creating clays or other oxidized, hydrated phases (minerals that incorporate water molecules in their crystal structure) ”科学家推测如果水流经过，会形成泥土或其他水相关物质。A说揭示了为什么火星上找水很困难，显然不符合；B说成功的指出了水流经火星表面的结果，正确；C说这是基于水和火山矿物质相互反应的错误的假设，文中没有提到。所以选B。

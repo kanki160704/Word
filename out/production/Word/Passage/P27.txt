@@ -1,0 +1,49 @@
+Based on evidence from tree rings, pollen samples and other records, scientists have for a long time assumed that interglacials—warm interludes between ice ages—were as mild and uniform as the Holocene, the present interglacial, has been for all of its 8,000 to 10,000 years. But new research in Greenland has put this assumption into question.
+
+Researchers on two teams, the Greenland Ice-Core Project (GRIP) and the Greenland Ice Sheet Project 2 (GISP2), have analyzed two different cylinders of ice, each about two miles in depth, pulled up from the Greenland ice sheet. Such ice cores trap gases, bits of dust, and other chemicals that were present in the snow that fell over Greenland for thousands of years and then became compressed into ice. By studying these components, scientists have obtained a detailed archive of many aspects of climate, including air temperatures, snowfall, and concentrations of greenhouses gases in the atmosphere.
+
+Findings from the upper sections of the cores have confirmed what scientists already knew climate during the last ice age fluctuated rapidly. But scientists were astonished by findings from the lower sections of the GRIP core, which provided a close look at an interglacial period other than our own, the Eemian interglacial, a period that lasted from 135,000 to 115,000 years ago. Data from GRIP seem to indicate that the Eemian climate swung at least as wildly as the climate of ice age periods.
+
+Researchers’ clues to the Eemian climate come from measurements of the ratios of two slightly different types of oxygen, isotopes oxygen-16 and oxygen-18, preserved in the GRIP core. These ratios register the fluctuations of air temperatures over the seasons and years. When the air was warm, vapor containing the heavier isotope, oxygen-18, condensed and formed precipitation, in the form of snow, more readily than did vapor containing oxygen- 16. Thus, snow that fell during warmer periods contains proportionally more oxygen-18 than snow deposited during cold spells. Evidence of rapid climate shifts was also drawn from other sources, such as measurements of amounts of dust and calcium ions in the ice layers during cold periods: winds were strong, causing calcium-rich dust from loess deposits, which are composed of loose surface sediment, to blow across the ice sheet. Thus, differing amounts of dust in the layers also indicate changing climatic conditions.
+
+However, finds from the lower section of GISP 2 do not confirm those of GRIP. The wild climate swings shown by GRIP in the last interglacial are not seen in the GISP2 core. According to a GISP 2 scientist, the weight of flowing glacial ice above has stressed the lower sections of both cores. This may have deformed the lower ice, disrupting its annual layers and thereby causing the discrepancy between the records. Still, some climatologists believe GRIP’s record may be the more reliable of the two. It was drilled closer to a location called the ice divide, where stresses would have been lower, they say.
+
+1. The passage is primarily concerned with 
+
+A. refuting certain scientific theories about Earth’s climatic history  B. outlining new findings concerning Earth’s climate during ice ages 
+
+C. discussing new research that may challenge a long-held scientific assumption about Earth’s climatic history 
+
+D. describing the climatic changes that occurred when Earth moved from an ice age into an interglacial period 
+
+E. reconciling conflicting evidence concerning climatic changes.
+
+2.	Which of the following describes research that is most clearly analogous to the testing done by GRIP scientists?
+
+A. Scientists studying the formation of the Sahara desert measure the rate of topsoil erosion in the region 
+
+B. Scientists seeking to determine the age of a particular fossil measure the percentage of its carbon atoms that have decayed
+
+C. Scientists researching vision in flies measure and compare the amounts of vitamin A found in the retinas of several fly species. 
+
+D. Scientists investigating the development of life on Earth measure and compare the amount of oxygen used by various organisms along the evolutionary scale.
+
+E. Scientists plotting the fluctuations in rainfall in the early rain forests measure the presence of certain gases trapped in tree rings of older trees.
+
+3.	According to the passage, which of the following is the most accurate statement of what scientists believed, prior to the GRIP findings, about Earth’s climate? 
+
+A. Over the course of Earth’s history, interglacials have become progressively milder  B. Earth’s overall climate has been generally mild since the planet’s formation
+
+C. During both interglacials and ice ages, Earth’s climate has fluctuated violently. 
+
+D. During ice ages, Earth’s climate has been highly variable, whereas during interglacials it has been mild and stable. 
+
+E. During interglacials, Earth’s climate has been highly variable, whereas during ice ages it has been uniformly cold and icy.
+
+4.	The passage suggests that which of the following is most likely to have been true of the oxygen-16 and oxygen-18 isotopes found in the lower sections of the GRIP core? 
+
+A. There was significantly more isotope oxygen-18 than isotope oxygen-16 in the ice layers. B. There was significantly more isotope oxygen-16 than isotope oxygen-18 in the ice layers. C. Ratios of isotopes oxygen-18 and oxygen-16 varied in the ice layers.
+
+D. Layers containing isotope oxygen-18 placed stress on the layers containing isotope oxygen-16, possibly distorting them. 
+
+E. Isotope oxygen-16, being lighter, was located mainly in the upper layers, whereas oxygen-18 had settled into the lower layers.

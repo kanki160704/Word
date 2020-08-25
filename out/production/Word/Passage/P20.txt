@@ -1,0 +1,51 @@
+In 1995 the Galileo spacecraft captured data about Jupiters atmosphere—namely, the absence of most of the predicted atmospheric water—that challenged prevailing theories about Jupiters structure. The unexpectedness of this finding fits a larger pattern in which theories about planetary composition and dynamics have failed to predict the realities discovered through space exploration. Instead of normal planets whose composition could be predicted by theory, the planets populating our solar system are unique individuals whose chemical and tectonic identities were created through numerous contingent events. One implication of this is that although the universe undoubtedly holds other planetary systems, the duplication of the sequence that produced our solar system and the development of life on Earth is highly unlikely.
+
+ 
+
+Recently planetary scientists have suggested that the external preconditions for the development of Earth’s biosphere probably included four paramount contingencies. First, a climate conducive to life on Earth depends upon the extraordinarily narrow orbital parameters that define a continuously habitable zone where water can exist in a liquid state. If Earths orbit were only 5 percent smaller than it is, temperatures during the early stages of Earths history would have been high enough to vaporize the oceans. If the Earth-Sun distance were as little as 1 percent larger, runaway glaciation on Earth about 2 billion years ago would have caused the oceans to freeze and remain frozen to this day. Second, Jupiter’s enormous mass prevents most Sun-bound comets from penetrating the inner solar system. It has been estimated that without this shield, Earth would have experienced bombardment by comet-sized impactors a thousand times more frequently than has actually been recorded during geological time. Even if Earth‘s surface were not actually sterilized by this bombardment, it is unlikely that any but the most primitive life-forms could have survived. This suggests that only planetary systems containing both terrestrial planets like Earth and gas giants like Jupiter might be capable of sustaining complex life-forms.
+
+ 
+
+Third, the gravitational shield of the giant outer planets, while highly efficient, must occasionally fail to protect Earth. Paradoxically, while the temperatures required for liquid water exist only in the inner solar system, the key building blocks of life, including water itself, occur primarily beyond the asteroid belt. Thus the evolution of life has depended on a frequency of cometary impacts sufficient to convey water, as well as carbon and nitrogen, from these distant regions of the solar system to Earth while stopping short of an impact magnitude that would destroy the atmosphere and oceans. 
+
+Finally, Earth’s unique and massive satellite, the Moon, plays a crucial role in stabilizing the obliquity of Earth’s rotational axis, this obliquity creates the terrestrial seasonality so important to the evolution and diversity of life. Mars, in contrast, has a wildly oscillating tilt and chaotic seasonality, while Venus, rotating slowly backward, has virtually no seasonality at all.
+
+1. The passage is primarily concerned with 
+
+A. enumerating conditions that may have been necessary for a particular development 
+
+B. outlining the conditions under which scientists may be able to predict certain events 
+
+C. explaining how a particular finding affected scientists understanding of a phenomenon  D. suggesting reasons why a particular outcome was more likely to occur than other possible outcomes 
+
+E. assessing the relative significance of factors that contributed to a particular occurrence
+
+2.	It can be inferred from the passage that the planetary scientists would be most likely to agree with which of the following statements concerning the development of complex life forms on Earth? 
+
+A. It might have occurred earlier in Earths history if cometary impacts had been less frequent than they were.
+
+B. It could have occurred if Earths orbit were 1 percent larger than it is but not if Earths orbit were 5 percent smaller 
+
+C. It probably follows a pattern common on other terrestrial planets that occupy planetary systems containing gas giants.
+
+D. Its dependence on the effect that Jupiters gravitational shield has on Earth was difficult to recognize prior to 1995. 
+
+E. It has been contingent on conditions elsewhere in Earths solar system as well as on conditions on Earth itself.
+
+3.	The author of the passage most likely mentions Mars oscillating tilt primarily in order to 
+
+A. provide evidence for a proposition about the potential effects of cometary impacts
+
+B. emphasize the absence from our solar system of normal planets 
+
+C. contrast the rotational axis of Mars with that of Venus 
+
+D. characterize the role of other planets in the solar system in earths development  E. emphasize the importance of the Moon to the development of life on Earth
+
+4.	The passage suggests each of the following about water on Earth EXCEPT:  A. It was conveyed to Earth by comets. 
+
+B. It appeared on Earth earlier than did carbon and nitrogen. 
+
+C. Its existence in a liquid state is contingent on Earths orbital parameters. 
+
+D. Much of it came from a part of the solar system where water cannot exist in a liquid state. E. It is unlikely that there would be much of it available to support life if the gravitational shield of the outer planets did not limit the frequency with which comets strike Earth.

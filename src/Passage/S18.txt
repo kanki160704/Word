@@ -1,0 +1,15 @@
+1. 答案：D
+解析：首段用对比（大小不般配的天体相撞／大小类似的天体相撞）方式，引入大碰撞对月亮起源的解释。
+二段详细介绍大碰撞说对月亮起源的解释：该理论能解释之前解释的诸多不足。
+三段作者把大碰撞说引申到其他行星，文章末尾表达了作者谨慎乐观的态度。
+
+该题所问高亮句子是“Massive projectiles striking much larger bodies createvarious kinds of craters, including multi-ring basins–the largest geologic features observed on planets and moons”，下一句是“In such collisions, the impactor is completely destroyed and itsmaterial is incorporated into the larger body. ”，由此可知选D.
+
+2. 答案：E
+解析：该题问作者对titannic collision模型的观点，定位至原文“Such conjectures are tempting,but, since no early planet was immune to titanic impacts, they could be usedindiscriminately to explain away in a cavalier fashion every unusual planetarycharacteristic ”一句可知选E。
+
+3. 答案：E
+解析：【微信公众号：张巍老师GRE】根据问题中的关键词compounds and elements可定位至原文“The difficulty in recondensing this vapor in Earth’s orbit, and its subsequent loss to the vacuum of outer space, might account for the observed absence in lunar rocks of certain readily vaporized compounds and elements.”可知月球上现在已经没有某些compounds and elements了，而这是与地球相比较的结果而言，所以地球上是还有这些物质的，选E。C选项不准确，根据原文，这些元素从来没有在月亮存在过：The difficulty in recondensing this vapor in Earth’s orbit, and its subsequent loss to the vacuum of outer space，含有这些元素的气体难于在月亮的旋转轨道凝固，直接流失到太空了。
+
+4. 答案：A
+解析：问题针对第二段的主旨。从文章结构分析可知，第二段是用Titanic collision impacts理论解释月亮起源，该理论能解释之前理论无法解释的一些特殊现象。所以选A。

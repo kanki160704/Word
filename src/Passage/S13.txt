@@ -1,0 +1,7 @@
+1. 答案：A
+解析：文章首句介绍老观点：鸟产卵是受制于能量和营养消耗的。2句之后，L提出不同观点：产蛋规模受制于父母成功饲养的能力。后续研究发现，自己觅食的种类（P）产蛋规模受制于其他因素。潜在意思是说，父母饲养的种类（A），成功饲养的能力有可能是重要的，但老观点也是有其道理的。该题问的是首句生物学家的观点，定位可知A选项。
+
+2. 答案：AC
+解析：【微信公众号：张巍老师】该题问L关于产卵规模的观点，选项定位可知A和C。
+A选项定位到：Hesuggested that clutch size had instead evolved in relation to the number ofyoung that the parents could successfully rear. Subsequently, most studiesfocused on limitations operating during chick rearing, particularly amongaltricial species (species in which the parents feed their young in the nest).
+C选项定位到：Lack,however, suggested that clutch size—the number of eggs a bird lays perbreeding cycle—isfar below the potential limit of egg production. （文章末句发现并未否定该观点）。

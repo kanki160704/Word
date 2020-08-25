@@ -1,0 +1,15 @@
+答案：A
+解析：
+文章首段首先介绍一个具体发现：1995年发现木星大气缺乏之前预测的气态水，进而指出该发现的意义：复制地球生命的条件可能性很低。
+二段、三段详细展开地球生命所需的4种偶然条件：1 地球公转轨道不大不小。2 木星的保护作用。3 木星保护的偶尔失灵带来地球生命所需要的重要物质。4 卫星月球的稳定作用。
+
+该题关于文章主旨。通读全文可知本文主要介绍了地球生物圈形成的四个条件，由原文“Recently planetary scientists have suggested that the externalpreconditions for the development of Earth’s biosphereprobably included four paramount contingencies. ”可知选A。
+
+2. 答案：E
+解析：本题根据complex life forms on Earth 可以定位到第二段最后一句，可知，地球上生物存在的条件不仅要和地球自己的条件吻合，还得和太阳系中其他的条件吻合，故本题选E。
+
+3. 答案：E
+解析：定位到原文“Finally,Earth’s unique and massive satellite, the Moon, plays a crucial role instabilizing the obliquity of Earth’s rotational axis, this obliquity createsthe terrestrial seasonality so important to the evolution and diversity oflife. Mars, in contrast, has a wildly oscillating tilt and chaotic seasonality,while Venus, rotating slowly backward, has virtually no seasonality at all. ”通过对比有卫星和没有卫星的不同情况，可知选E。
+
+4. 答案：B
+解析：排除题。文中只有“Thus theevolution of life has depended on a frequency of cometary impacts sufficient toconvey water, as well as carbon and nitrogen”一句，并未提到水、碳、氮的先后顺序。

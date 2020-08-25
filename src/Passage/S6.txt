@@ -1,0 +1,8 @@
+1. 答案：ABC
+解析：文章首句指出最近研究与之前怀疑者观点的矛盾：怀疑者认为北极地区降温，最近研究发现升温。后文依次列举方式解释了几个原因：1雪和冰的反射，2 空气稀薄，3 少蒸发损耗。
+该题问可能导致地球极地温度大幅变化（swing）因素，定位到文章中2句：several factors lead to greater temperature swings at Earths polar regions。可知ABC都正确。
+
+2. 答案：B
+解析：本题实质是问为什么要引入skeptics的观点，由定位句可知，skeptics提出格陵兰岛温度下降是为了与下文的report形成冲突。B选项those more localized temperature drops对应skeptics观点中的温度下降，upward trend对应report中的温度上升。
+C选项中skeptics和 report的内容的确冲突，但是并不能表明格陵兰岛的温度趋势是否逆转
+A、D、E三个选项原文找不到对应。【此题已经收录到官方模考题ppo中，网上还有答案为C的版本应该是以前校订答案的错误】
