@@ -11,14 +11,18 @@ import java.util.*;
 import java.util.Date;
 
 public class Word {
-    private static void writeLog(String str) {
+    public static void writeLog(String str) {
+        /*
+        * 对于增加单词、复习单词等行为记录日志
+         */
+        Date reviewDate = new Date();
+        String str2 = reviewDate + ": " + str + "\n";
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream("Log.txt", true);
-            fos.write(str.getBytes());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+            fos.write(str2.getBytes());
+        }
+        catch (IOException e) {
             e.printStackTrace();
         } finally {
             try {
@@ -51,10 +55,15 @@ public class Word {
     }
 
     private static void reviewNewWords(Map<String, String> map, Scanner s) {
+        /*
+        * 对于不会的单词，以hashmap形式存放，并且进行复习
+         */
         if (map.isEmpty() == true) {
             return;
         }
         else {
+            int n = map.size();
+            System.out.println("共" + n + "个");
             Map<String, String> newWords = new HashMap<String, String>();
             printMap(map, s);
             for (String english : map.keySet()) {
@@ -133,17 +142,11 @@ public class Word {
         将单词插入一张表格中，需要给出单词的中文、英文、首字母
          */
         String sql = "";
-        if (tableName.equals("newword")) {
-            sql = "insert into  newword (word, chinese, firstLetter, lastReview) values (?, ?, ?, CURRENT_TIMESTAMP)";
-        }
-        else if (tableName.equals("yesterday")) {
-            sql = "insert into  yesterday (word, chinese, firstLetter, lastReview) values (?, ?, ?, CURRENT_TIMESTAMP)";
-        }
-        else if (tableName.equals("urgent")) {
-            sql = "insert into  urgent (word, chinese, firstLetter, lastReview) values (?, ?, ?, CURRENT_TIMESTAMP)";
+        if (tableName.equals("oldword")) {
+            sql = "insert into oldword (word, chinese, firstLetter) values (?, ?, ?)";
         }
         else {
-            sql = "insert into  oldword (word, chinese, firstLetter) values (?, ?, ?)";
+            sql = "insert into " + tableName + " (word, chinese, firstLetter, lastReview) values (?, ?, ?, CURRENT_TIMESTAMP)";
         }
         try {
             ps = conn.prepareStatement(sql);
@@ -151,6 +154,51 @@ public class Word {
             ps.setString(2, chinese);
             ps.setString(3, first);
             ps.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public static boolean isInTable(PreparedStatement ps, Connection conn, String english, String tableName) {
+        /*
+        判断一个单词在不在指定的表格中
+         */
+        String sql = "select count(*) from " + tableName + " where word = '" + english + "'";
+        try {
+            ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            int n = rs.getInt("count(*)");
+            rs.close();
+            if (n != 0) {
+                return true;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+
+    public static String getChinese(PreparedStatement ps, Connection conn, String english, String tableName) {
+        String sql = "select * from " + tableName + " where word = '" + english + "'";
+        try {
+            ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            String result = rs.getString("chinese");
+            rs.close();
+            return result;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void updateChinese(PreparedStatement ps, Connection conn, String english, String chinese, String tableName) {
+        String sql = "update " + tableName + " set chinese = '" + chinese + "' where word = '" + english + "'";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -169,14 +217,34 @@ public class Word {
                 writeLog("添加了" + i + "生词");
                 return;
             }
-            String first = english.substring(0, 1);
-            System.out.print("请输入想要添加的中文：");
-            String chinese = s.nextLine();
-            insertWord(ps, conn, english, chinese, first, tableName);
+            boolean isIn = isInTable(ps, conn, english, tableName);
+            if (isIn == false) {
+                String first = english.substring(0, 1);
+                System.out.print("请输入想要添加的中文：");
+                String chinese = s.nextLine();
+                insertWord(ps, conn, english, chinese, first, tableName);
+            }
+            else {
+                System.out.print("原先的中文是：");
+                String chinese = getChinese(ps, conn, english, tableName);
+                System.out.println(chinese);
+                System.out.print("是否需要更改，是请输入想要修改的中文，否选择n：");
+                String input = s.nextLine();
+                if (input.equals("n")) {
+                    i --;
+                    continue;
+                }
+                else {
+                    updateChinese(ps, conn, english, input, tableName);
+                }
+            }
         }
     }
 
     private static void deleteWord(String english, PreparedStatement ps, Connection conn, String tableName) {
+        /*
+        * 从表中删除英语为English的单词
+         */
         String sql = "delete from " + tableName + " where word = ?";
         try {
             ps = conn.prepareStatement(sql);
@@ -215,26 +283,17 @@ public class Word {
 
     private static void reviewYesterday(ResultSet rs, PreparedStatement ps, Connection conn, Scanner s) {
         /*
-        复习前一天不会的生词
+        复习前两天不会的生词，这些生词记录在yesterday表格中，调用此函数时先将记录日期与当前时间的时间差大于1天的删除，之后遍历表格复习。
          */
         System.out.println("复习前一天的生词");
-        String sql = "delete from yesterday where TIMESTAMPDiff(hour, lastReview, CURRENT_TIMESTAMP) > 24";
+        String sql = "delete from yesterday where TIMESTAMPDiff(hour, lastReview, CURRENT_TIMESTAMP) > 48";
+
         try {
             ps = conn.prepareStatement(sql);
-            ps.executeUpdate();
-            String reviewSql = "select * from yesterday";
-            ps = conn.prepareStatement(reviewSql);
-            rs = ps.executeQuery();
-            Map<String, String> map = new HashMap<>();
-            int i = 0;
-            while (rs.next()) {
-                i ++;
-                String english = rs.getString("word");
-                String chinese = rs.getString("chinese");
-                map.put(english, chinese);
-            }
-            reviewNewWords(map, s);
-            writeLog("复习了" + i + "单词");
+            ps.execute();
+            int row = getRowNumber(ps, conn, "yesterday");
+            System.out.println(row);
+            review(rs, ps, conn, s, "yesterday", row);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -246,7 +305,7 @@ public class Word {
          */
         System.out.println("开始复习");
         Map<String, String> unknownWords = new HashMap<>();
-        String sql = "select * from " + tableName + " order by rand() limit ?";
+        String sql = "select * from " + tableName + " where TIMESTAMPDiff(hour, lastReview, CURRENT_TIMESTAMP) > 2 order by rand() limit ?";
         try {
             int count = 1;
             ps = conn.prepareStatement(sql);
@@ -255,7 +314,7 @@ public class Word {
             while (rs.next()) {
                 while (true) {
                     String english = rs.getString("word");
-                    System.out.print("第" +count + "个：" + english + "输入y查看中文：");
+                    System.out.print(count + "/" + n + "个：" + english + "输入y查看中文：");
                     count ++;
                     String temp = s.nextLine();
                     if (temp.equals("y")) {
@@ -268,7 +327,12 @@ public class Word {
                             if (result.equals("y") || result.equals("n")) {
                                 if (result.equals("n")) {
                                     unknownWords.put(english, chinese);
-                                    insertWord(ps, conn, english, chinese, english.substring(0, 1), "yesterday");
+                                    if (!tableName.equals("yesterday")) {
+                                        /*
+                                        如果不在yesterday表格中复习，遇到生词要加入到yesterday中
+                                         */
+                                        insertWord(ps, conn, english, chinese, english.substring(0, 1), "yesterday");
+                                    }
                                 }
                                 break;
                             }
@@ -285,8 +349,7 @@ public class Word {
 
             System.out.println("复习结束，以下是生词学习：");
             reviewNewWords(unknownWords, s);
-            Date reviewDate = new Date();
-            String log = new String(reviewDate + ": 复习了" + n + "单词\n");
+            String log = new String(": 复习了" + n + "单词");
             writeLog(log);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -295,7 +358,7 @@ public class Word {
 
     private static void update(Connection conn, PreparedStatement ps, String isKnown, String tableName, String english) {
         /*
-        * newword表和urgent表是一样的
+        * newword表和urgent表是一样的，对于yesterday表格，如果回答no，就将最后更新的时间更新
         * 如果单词在已学习的表格中，并且认识的话，不做任何修改。
         * 如果单词在已学习的表格中，并且不认识，那么将该单词放到生词表中，设置熟悉值为0.
         * 如果单词在生词表中，并且认识，那么熟悉值+1. 如果两次复习时间小于2小时，则不增加。如果熟悉值更新后到了20，就从生词表中删除，并且放入已学习。
@@ -307,7 +370,7 @@ public class Word {
                 return;
             }
             else {
-                exchange(english, "oldword", "newword", ps, conn);
+                exchange(english, "oldword", "urgent", ps, conn);
             }
         }
         else if (tableName.equals("newword") || tableName.equals("urgent")) {
@@ -328,10 +391,47 @@ public class Word {
                 return;
             }
             setFamiliar(familiar, tableName, ps, conn, english);
+            if (isKnown.equals("y") && familiar + 1 < 20) {
+                /*
+                如果已经掌握了就把时间更新到现在，因为这样可以让以后review的时候不在抽到
+                 */
+                updateLastReview(ps, conn, tableName, english);
+            }
+        }
+        else if (tableName.equals("yesterday") && isKnown.equals("n")) {
+            updateLastReview(ps, conn, tableName, english);
         }
     }
 
+    public static void updateLastReview(PreparedStatement ps, Connection conn, String tableName, String english) {
+        String sql = "update " + tableName + " set lastReview = current_timestamp where word = '" + english + "'";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public static int getRowNumber(PreparedStatement ps, Connection conn, String tableName) {
+        int result = 0;
+        String sql = "select * from " + tableName;
+        try {
+            ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                result ++;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return result;
+    }
+
     public static void init(Scanner s) {
+        /*
+        * 初始化程序
+         */
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
